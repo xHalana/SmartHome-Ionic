@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title size="large">
-      {{test}}
+     Spálňa
     </ion-title>
     <ion-buttons end>
       <button (click)="refresh()" style="background: transparent;">
@@ -19,7 +19,7 @@
       <ion-icon name="add-circle-outline"></ion-icon>
       <ion-toggle [(ngModel)]="item.status" (ionChange)="toogleClick(item,'on','off')"></ion-toggle>
     </ion-list-header>
-    <div class="colorContainer" *ngIf="sectionIndex == i && i == 0">
+    <div class="colorContainer" *ngIf="sectionIndex == i && i == 1">
       <ion-row>
         <ion-col size="3">
           <button class="button button-first">
