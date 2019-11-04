@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title size="large">
+      Obývacia izba
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="refresh()" style="background: transparent;">
+        <ion-icon style="zoom:2.5" name="refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor="let item of livingRoomItems ; let i = index">
+    <ion-list-header (click)="toggleSection(i)">
+      <ion-label class="label" color="dark">{{item.name}}</ion-label>
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <ion-toggle [(ngModel)]="item.status" (ionChange)="toogleClick(item.status,'on','off')"></ion-toggle>
+    </ion-list-header>
+    <div class="colorContainer" *ngIf="sectionIndex == i && i == 0">
+      <ion-row>
+
+        <ion-col size="3">
+          <button class="button button-first">
+            <ion-icon style="zoom:2.5" ios="ios-arrow-up" md="md-arrow-dropup" (click)="onClick('lightup')"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button class="button button-second">
+            <ion-icon style="zoom:2.5" ios="ios-arrow-down" md="md-arrow-dropdown" (click)="onClick('lightdown')">
+            </ion-icon>
+          </button>
+
+        </ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button class="button button1" style="background-color: rgb(247, 31, 31)" (click)="onClick('red')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: rgb(15, 161, 15)" (click)="onClick('green')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: rgb(48, 164, 241)" (click)="onClick('blue')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: rgb(255, 255, 255)"
+            (click)="onClick('white')"></button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button class="button button1" style="background-color: #FF5319" (click)="onClick('red1')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: #3CD45F" (click)="onClick('green1')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: #6C6CD4" (click)="onClick('blue1')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: rgb(63, 61, 61)"
+            (click)="onClick('flash')">Flash</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button class="button button1" style="background-color: #FF926B" (click)="onClick('red2')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: #47E3C6" (click)="onClick('green2')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: #5D2AE3" (click)="onClick('blue2')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: rgb(63, 61, 61); text-align: center;"
+            (click)="onClick('strobe')">Strobe</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button class="button button1" style="background-color: #F3F62F" (click)="onClick('red3')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: #44C5DE" (click)="onClick('green3')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: #9025DE" (click)="onClick('blue3')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: rgb(63, 61, 61)"
+            (click)="onClick('fade')">Fade</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button class="button button1" style="background-color: #F3F62F" (click)="onClick('red4')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: #289AE3" (click)="onClick('green4')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: #BE11E3" (click)="onClick('blue4')"></button>
+        </ion-col>
+        <ion-col>
+          <button class="button button1" style="background-color: rgb(63, 61, 61)"
+            (click)="onClick('smoothionic serve')">Smooth</button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngIf="sectionIndex == i && i == 1">
+    </div>
+  </ion-list>
+</ion-content>
